@@ -15,7 +15,7 @@ namespace MethodsWithLoopsAndConditionals
             CheckAgeForVoting();
             Check10Range();
             MultiplicationTable();
-            CreateRandomArray(5);
+            CreateRandoArray();
         }
         public static void Print1000Range() 
         {
@@ -106,14 +106,17 @@ namespace MethodsWithLoopsAndConditionals
                 Console.WriteLine($"{prod}");
             }
         }
-        public static Array CreateRandomArray(int num1)
+        public static int [] CreateRandoArray()
         {
-            int[] randArra;
-            for (int i = 0; i < num1; i++)
+            Console.WriteLine("How many items would you like in your Array?");
+            var userInput = int.Parse(Console.ReadLine());
+            var newArray = new int[userInput];
+            for (int i=0; i<newArray.Length; i++)
             {
-                randArra[i] =int new.Random(1, 20);
+                var random = new Random();
+                newArray[i]=random.Next(1, 3000);
             }
-            return randArra;
+            return newArray;
         }
     }
 }
